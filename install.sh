@@ -21,8 +21,8 @@ else
     P12="${DEVICE}12"
 fi
 
-OSHOST="http://download.fedoraproject.org/pub/fedora/linux/releases/21/Workstation/armhfp/Images/"
-OSFILE="Fedora-Workstation-armhfp-21-5-sda.raw.xz"
+OSHOST="http://archlinuxarm.org/os/"
+OSFILE="ArchLinuxARM-chromebook-latest.tar.gz"
 BOOTFILE="boot.scr.uimg"
 UBOOTHOST="https://github.com/jquagga/nv_uboot-spring/raw/master/"
 UBOOTFILE="nv_uboot-spring.kpart.gz"
@@ -105,7 +105,7 @@ if [ $DEVICE = $EMMC ]; then
 
     sync
 
-    log "All done! Reboot and press ctrl + D to boot Fedora"
+    log "All done! Reboot and press ctrl + D to boot Arch"
 else
     if [ ! -f "${UBOOTFILE}" ]; then
         log "Downloading ${UBOOTFILE}"
@@ -118,5 +118,5 @@ else
 
     sync
 
-    log "All done! Reboot and press ctrl + U to boot Fedora from ${DEVICE}"
+    log "All done! Reboot and press ctrl + U to boot Arch from ${DEVICE}"
 fi
